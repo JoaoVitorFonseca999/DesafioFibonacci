@@ -58,13 +58,14 @@ public class Fibonacci {
             // }
             // else{
             //     System.out.println("a = b");
+            
             // }
 
             if(a.GetSize() == 1 && a.GetDigits()[0] == 0 && b.GetSize() == 1 && b.GetDigits()[0] == 0){
                 break;
             }
             int count = 0;
-            for(int i = 0; i < 480; i++){
+            for(int i = 1; i < 480; i++){
                 if(BigNum.IsBig(fib[i], a) && BigNum.IsBig(b, fib[i]) || fib[i].equals(a) || fib[i].equals(b)){
                     count++;
                 }
