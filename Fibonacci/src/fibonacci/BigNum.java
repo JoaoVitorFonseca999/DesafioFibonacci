@@ -66,4 +66,41 @@ public class BigNum {
         return c;
     }
 
+    //equals function
+    public boolean equals(BigNum a){
+        if(a.GetSize() != this.GetSize()){
+            return false;
+        }
+        else{
+            for(int i = 0; i < a.GetSize(); i++){
+                if(a.GetDigits()[i] != this.GetDigits()[i]){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    //Is Big
+    public static boolean IsBig(BigNum a, BigNum b){
+        if(a.GetSize() > b.GetSize()){
+            return true;
+        }
+        else if(a.GetSize() < b.GetSize()){
+            return false;
+        }
+        else{
+            for(int i = a.GetSize() - 1; i >= 0; i--){
+                if(a.GetDigits()[i] > b.GetDigits()[i]){
+                    return true;
+                }
+                else if(a.GetDigits()[i] < b.GetDigits()[i]){
+                    return false;
+                }
+            }
+        }
+        return false;
+    }
+
+
 }
